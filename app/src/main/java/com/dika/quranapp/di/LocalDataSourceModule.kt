@@ -31,8 +31,19 @@ object LocalDataSourceModule {
             .build()
     }
 
-
     @Singleton
     @Provides
     fun provideChapterDao(db: AppDatabase) = db.chapterDao()
+
+    @Singleton
+    @Provides
+    fun provideVerseDao(db: AppDatabase) = db.verseDao()
+
+    @Singleton
+    @Provides
+    fun provideWordDao(db: AppDatabase) = db.wordDao()
+
+    @Singleton
+    @Provides
+    fun provideVerseWordDao(db: AppDatabase) = db.verseWordDao()
 }
