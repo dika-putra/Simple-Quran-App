@@ -10,4 +10,7 @@ import com.dika.quranapp.data.local.model.WordEntity
 interface WordDao : BaseDao<WordEntity> {
     @Query("SELECT * FROM words")
     fun getAll(): LiveData<List<WordEntity>>
+
+    @Query("DELETE FROM words")
+    suspend fun delete()
 }

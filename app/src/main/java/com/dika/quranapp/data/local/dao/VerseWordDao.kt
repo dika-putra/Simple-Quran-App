@@ -10,4 +10,7 @@ import com.dika.quranapp.data.local.model.VerseWordCrossRef
 interface VerseWordDao : BaseDao<VerseWordCrossRef> {
     @Query("SELECT * FROM verse_join_word_ref")
     fun getAll(): LiveData<List<VerseWordCrossRef>>
+
+    @Query("DELETE FROM verse_join_word_ref")
+    suspend fun delete()
 }

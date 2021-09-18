@@ -1,6 +1,7 @@
 package com.dika.quranapp.data.local.dao
 
 import androidx.lifecycle.LiveData
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
@@ -15,5 +16,8 @@ interface VerseDao : BaseDao<VerseEntity> {
 
     @Transaction
     @Query("SELECT * FROM verses")
-    fun getVersesWithWords(): List<VerseWithWords>
+    fun getVersesWithWords(): PagingSource<Int, VerseWithWords>
+
+    @Query("DELETE FROM verses")
+    suspend fun delete()
 }
