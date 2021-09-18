@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.dika.quranapp.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         toolbar.apply {
             setupWithNavController(navController, appBarConfiguration)
             setSupportActionBar(toolbar)
+            setNavigationOnClickListener {
+                onBackPressed()
+            }
         }
     }
 
