@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.dika.quranapp.data.common.Result
 import com.dika.quranapp.databinding.FragmentHomeBinding
 import com.dika.quranapp.domain.model.Chapter
@@ -56,6 +57,9 @@ class HomeFragment : Fragment(), HomeAdapter.HomeAdapterListener {
     }
 
     override fun onVerseClick(model: Chapter) {
+        val direction =
+            HomeFragmentDirections.actionHomeFragmentToVerseFragment(model.nameSimple, model.id)
+        findNavController().navigate(direction)
     }
 
     override fun onDetailClick(model: Chapter) {

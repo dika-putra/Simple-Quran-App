@@ -8,5 +8,7 @@ data class WordResponse(
     @SerializedName("position")
     val position: Int = 0,
     @SerializedName("text")
-    val text: String = ""
+    val text: String = "",
+    @SerializedName("translation")
+    val translation: TranslationResponse = TranslationResponse(),
 )

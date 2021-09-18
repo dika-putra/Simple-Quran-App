@@ -9,5 +9,22 @@
         android:id="@+id/homeFragment"
         android:name="com.dika.quranapp.presenter.home.HomeFragment"
         android:label="Chapter Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_verseFragment"
+            app:destination="@id/verseFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verseFragment"
+        android:name="com.dika.quranapp.presenter.verse.VerseFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_verse">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="chapterId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

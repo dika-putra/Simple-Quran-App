@@ -7,11 +7,13 @@ import com.dika.quranapp.domain.model.Word
 fun WordResponse.toEntity() = WordEntity(
     id = id,
     position = position,
-    text = text
+    text = text,
+    translation = translation.toEntity()
 )
 
 fun WordEntity.toModel() = Word(
     id = id,
     position = position,
-    text = text
+    text = text,
+    translation = translation.toModel()
 )
