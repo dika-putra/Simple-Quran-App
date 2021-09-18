@@ -10,6 +10,5 @@ data class VerseEntity(
     @ColumnInfo(name = "verseId")
     val id: Int = 0,
     val verseNumber: Int = 0,
-    val verseKey: String = "",
-    val words: List<WordEntity> = listOf()
+    val verseKey: String = ""
 )

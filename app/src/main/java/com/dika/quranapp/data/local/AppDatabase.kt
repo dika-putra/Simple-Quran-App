@@ -8,7 +8,7 @@ import com.dika.quranapp.data.local.dao.VerseWordDao
 import com.dika.quranapp.data.local.dao.WordDao
 import com.dika.quranapp.data.local.model.ChapterEntity
 import com.dika.quranapp.data.local.model.VerseEntity
-import com.dika.quranapp.data.local.model.VerseWithWords
+import com.dika.quranapp.data.local.model.VerseWordCrossRef
 import com.dika.quranapp.data.local.model.WordEntity
 
 @Database(
@@ -16,7 +16,7 @@ import com.dika.quranapp.data.local.model.WordEntity
         ChapterEntity::class,
         VerseEntity::class,
         WordEntity::class,
-        VerseWithWords::class
+        VerseWordCrossRef::class
     ],
     version = 1,
     exportSchema = false
