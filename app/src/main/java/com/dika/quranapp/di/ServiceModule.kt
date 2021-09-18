@@ -1,6 +1,7 @@
 package com.dika.quranapp.di
 
 import com.dika.quranapp.data.remote.services.ChapterService
+import com.dika.quranapp.data.remote.services.VerseService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,4 +16,9 @@ object ServiceModule {
     @Singleton
     fun provideChapterService(retrofit: Retrofit): ChapterService =
         retrofit.create(ChapterService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideVerseService(retrofit: Retrofit): VerseService =
+        retrofit.create(VerseService::class.java)
 }
