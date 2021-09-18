@@ -1,9 +1,6 @@
 package com.dika.quranapp.di
 
-import com.dika.quranapp.domain.usecase.GetChapters
-import com.dika.quranapp.domain.usecase.GetChaptersImpl
-import com.dika.quranapp.domain.usecase.GetVerses
-import com.dika.quranapp.domain.usecase.GetVersesImpl
+import com.dika.quranapp.domain.usecase.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,4 +17,8 @@ abstract class UseCaseModule {
     @Binds
     @Singleton
     abstract fun bindGetVerseUseCase(getVersesImpl: GetVersesImpl): GetVerses
+
+    @Binds
+    @Singleton
+    abstract fun bindGetChapterInfoCase(getChapterInfoImpl: GetChapterInfoImpl): GetChapterInfo
 }
