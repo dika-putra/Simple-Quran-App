@@ -19,3 +19,4 @@ A simple app to show Quran chapter list, chapter info and verses
 - Coordinator Layout
 - Retrofit 2
 - Timber
+- MAterial Design
