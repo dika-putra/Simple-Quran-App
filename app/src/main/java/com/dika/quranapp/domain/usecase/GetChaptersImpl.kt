@@ -6,8 +6,8 @@ import com.dika.quranapp.domain.model.Chapter
 import com.dika.quranapp.domain.repository.ChapterRepository
 import javax.inject.Inject
 
-class GetChapterImpl @Inject constructor(
+class GetChaptersImpl @Inject constructor(
     private val repository: ChapterRepository
-) : GetChapter {
+) : GetChapters {
     override fun invoke(): LiveData<Result<List<Chapter>>> = repository.getChapter()
 }

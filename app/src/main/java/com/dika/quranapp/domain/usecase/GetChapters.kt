@@ -4,6 +4,6 @@ import androidx.lifecycle.LiveData
 import com.dika.quranapp.data.common.Result
 import com.dika.quranapp.domain.model.Chapter
 
-interface GetChapter {
+interface GetChapters {
     fun invoke(): LiveData<Result<List<Chapter>>>
 }

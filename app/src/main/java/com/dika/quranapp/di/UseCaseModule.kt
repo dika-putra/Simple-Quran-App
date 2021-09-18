@@ -1,18 +1,23 @@
 package com.dika.quranapp.di
 
-import com.dika.quranapp.data.repository.ChapterRepositoryImpl
-import com.dika.quranapp.domain.usecase.GetChapterImpl
+import com.dika.quranapp.domain.usecase.GetChapters
+import com.dika.quranapp.domain.usecase.GetChaptersImpl
+import com.dika.quranapp.domain.usecase.GetVerses
+import com.dika.quranapp.domain.usecase.GetVersesImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-object UseCaseModule {
+abstract class UseCaseModule {
+    @Binds
     @Singleton
-    @Provides
-    fun provideGetChapter(repositoryImpl: ChapterRepositoryImpl): GetChapterImpl =
-        GetChapterImpl(repositoryImpl)
+    abstract fun bindGetChaptersUseCase(getChapterImpl: GetChaptersImpl): GetChapters
+
+    @Binds
+    @Singleton
+    abstract fun bindGetVerseUseCase(getVersesImpl: GetVersesImpl): GetVerses
 }
