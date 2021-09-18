@@ -14,12 +14,28 @@
             android:id="@+id/action_homeFragment_to_verseFragment"
             app:destination="@id/verseFragment"
             app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_infoFragment"
+            app:destination="@id/infoFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/verseFragment"
         android:name="com.dika.quranapp.presenter.verse.VerseFragment"
         android:label="{title}"
         tools:layout="@layout/fragment_verse">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="chapterId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.dika.quranapp.presenter.info.InfoFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_info">
         <argument
             android:name="title"
             app:argType="string" />
